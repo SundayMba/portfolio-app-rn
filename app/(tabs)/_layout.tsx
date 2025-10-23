@@ -1,6 +1,7 @@
 import { ThemeProvider, useTheme } from '@/hook/ThemeProvider';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { Tabs } from 'expo-router';
+import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 
 const ThemedTabs = () => {
@@ -19,7 +20,7 @@ const ThemedTabs = () => {
           borderTopColor: theme.colors.border,
         },
         tabBarLabelStyle: {
-          textTransform: 'capitalize',
+          textTransform: 'uppercase',
           fontWeight: '600',
           letterSpacing: 0.5,
         },
@@ -51,9 +52,20 @@ const ThemedTabs = () => {
   );
 };
 
+const ThemeAwareStatusBar = () => {
+  const { theme } = useTheme();
+  return (
+    <StatusBar
+      style={theme.statusBarStyle === 'light-content' ? 'light' : 'dark'}
+      backgroundColor={theme.colors.background}
+    />
+  );
+};
+
 const TabLayout = () => {
   return (
     <ThemeProvider>
+      <ThemeAwareStatusBar />
       <ThemedTabs />
     </ThemeProvider>
   );
