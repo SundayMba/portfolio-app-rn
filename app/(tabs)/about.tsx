@@ -30,7 +30,7 @@ const About = () => {
       </View>
       <View style={styles.avatar}>
         <Image
-          source={require('../../assets/images/profile.png')}
+          source={require('../../assets/images/profile.jpg')}
           style={{ width: 120, height: 120, borderRadius: 60 }}
         />
       </View>
