@@ -18,6 +18,11 @@ const ThemedTabs = () => {
           backgroundColor: theme.colors.background,
           borderTopColor: theme.colors.border,
         },
+        tabBarLabelStyle: {
+          textTransform: 'capitalize',
+          fontWeight: '600',
+          letterSpacing: 0.5,
+        },
         tabBarIcon: ({ color, size }) => {
           let name: React.ComponentProps<
             typeof MaterialCommunityIcons
